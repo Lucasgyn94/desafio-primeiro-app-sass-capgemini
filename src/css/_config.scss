@@ -1,0 +1,109 @@
+$cor-azul: rgb(11, 11, 78);
+$background: rgb(59, 51, 51);
+$cor-branca: white;
+$cor-roxa: rebeccapurple;
+$cor-verde: greenyellow;
+$cor-light-grey: 'light' + grey;
+
+@mixin estiloCores () {
+    color: $cor-azul;
+
+    h1 {
+        color: #{$cor-light-grey};;
+    }
+}
+
+@mixin estiloH1() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin corBackground() {
+    background-color: $background;
+}
+
+@mixin sombra() {
+    text-shadow: 2px 1px 1px #ccc;
+    text-decoration: underline;
+    color: lightblue;
+}
+
+@mixin zerarMarginPadding() {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin aplicaPadding($padding) {
+    padding: $padding;
+}
+
+@mixin estiloPrimeiraLetra() {
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px $cor-branca;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+@mixin estiloTagB () {
+    letter-spacing: 0.5rem;
+    color: $cor-verde;
+}
+
+@mixin aplicaWidth($width) {
+    width: $width;
+}
+
+@mixin aplicarMarginAndPadding($margin, $padding) {
+    @if ($margin && $padding) {
+        margin: $margin;
+        padding: $padding;
+    }
+}
+
+@mixin estiloParagRodape() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: #{$cor-light-grey};
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+@mixin estiloRodapeRotas() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin estiloLinksRodape() {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid greenyellow;
+    width: 100px;
+    border-radius: 2rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: $cor-roxa;
+    background-color: #{$cor-light-grey};
+    font-weight: bold;
+}   
+
+$corDiv: rgb(134, 68, 68);
+$tamanho: 10px;
+
+@for $i from 1 through 3 {
+    $nome: '.box-divisioria-' + $i;
+    #{$nome} {
+        font-size: $tamanho * 2;
+        background-color: lighten($corDiv, $i * 10%);
+    }
+}

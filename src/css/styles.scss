@@ -1,0 +1,58 @@
+@import "config";
+
+* {
+    @include zerarMarginPadding();
+}
+
+body {
+    @include corBackground();
+}
+
+
+.container {
+    @include estiloCores();
+    @include aplicaWidth(100%);
+    h1 {
+        @include estiloH1();
+        @include aplicaPadding(0.5rem);
+    }
+}
+
+p {
+    @include aplicaPadding(1rem);
+}
+
+p::first-letter {
+    @include estiloPrimeiraLetra();
+}
+
+
+.rodape {
+
+    p {
+        @include estiloParagRodape();
+    }
+}
+
+.rodape-rotas {
+    @include estiloRodapeRotas();
+    a {
+        @include estiloLinksRodape();
+    }
+}
+
+a:hover {
+    background-color: $cor-verde;
+}
+/*
+body {
+    @include fundoP($background);
+    @if ($background == black) {
+        color: $cor2;
+    } @else {
+        color: darkblue;
+        background-color: lightskyblue;
+    }
+}
+
+*/
